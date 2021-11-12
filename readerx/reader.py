@@ -71,7 +71,7 @@ class FileReader():
                     bar.update(1)
                 return bar.n
 
-    def line_iter(self) -> Generator[str]:
+    def line_iter(self) -> Generator[str,None,None]:
         """get row iterator, same as TextIOWrapper
 
         Yields:
@@ -81,7 +81,7 @@ class FileReader():
             for l in f:
                 yield l
 
-    def iter(self, buffer_size=5*1024*1024) -> Generator[bytes]:
+    def iter(self, buffer_size=5*1024*1024) -> Generator[bytes,None,None]:
         """get binary iterator, same as FileIO
 
         Yields:
